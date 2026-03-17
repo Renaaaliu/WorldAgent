@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-primary: #20d3ee;
+  --color-background-dark: #0F172A;
+  --color-background-deep: #0a131a;
+  --color-panel: rgba(15, 23, 42, 0.6);
+  
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background-dark text-slate-100 font-display antialiased;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-panel backdrop-blur-md border border-white/10;
+  }
+  
+  .hero-gradient {
+    background: radial-gradient(circle at center, rgba(32, 211, 238, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+  }
+  
+  .orbit-ring {
+    @apply border border-primary/10 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+}
